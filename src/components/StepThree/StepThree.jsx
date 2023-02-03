@@ -10,11 +10,19 @@ function StepThree() {
         dispatch({ type: 'SET_SUPPORT_SCORE', payload: event.target.value });
     }
 
+    const checkInputThree = () => {
+        if (supportScore === '') {
+            alert('Please provide input.')
+        }else {
+            history.push('/step/four')
+        }
+    }
+
     return (
         <>
             <h1>How well are you being supported?</h1>
             <input value = {supportScore} onChange={handleChangeThree}className="input" type="number" />
-            <button onClick = {() => history.push('/step/four')} className="button">Next</button>
+            <button onClick = {() => checkInputThree()} className="button">Next</button>
     
         
 

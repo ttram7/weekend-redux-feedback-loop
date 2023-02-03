@@ -11,19 +11,21 @@ function StepOne() {
         dispatch({ type: 'SET_FEELING_SCORE', payload: event.target.value });
     }
 
+    const checkInputOne = () => {
+        console.log(feelingScore);
+        if (feelingScore === '') {
+            alert('Please provide input.')
+        }else {
+            history.push('/step/two')
+        }
+    }
+    
+
     return (
         <>
             <h1>How are you feeling today?</h1>
-            {/* <p>Feeling?</p> */}
             <input value = {feelingScore} onChange={handleChangeOne} className="input" type="text" />
-            <button onClick = {() => history.push('/step/two')} className="button">Next</button>
-            {/* <form>
-                Feeling?
-                <input type ="number"/>
-            </form> */}
-        
-
-            
+            <button onClick = {() => checkInputOne()} className="button">Next</button>  
         </>
     )
 }

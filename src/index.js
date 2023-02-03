@@ -10,7 +10,7 @@ import registerServiceWorker from './registerServiceWorker';
 const feelingScore = (state = '', action) => {
     if (action.type === 'SET_FEELING_SCORE') {
         return action.payload;
-    }
+    } 
     return state;
 }
 

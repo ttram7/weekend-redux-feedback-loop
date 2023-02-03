@@ -10,11 +10,19 @@ function StepTwo() {
         dispatch({ type: 'SET_UNDERSTAND_SCORE', payload: event.target.value });
     }
 
+    const checkInputTwo = () => {
+        if (understandScore === '') {
+            alert('Please provide input.')
+        }else {
+            history.push('/step/three')
+        }
+    }
+
     return (
         <>
             <h1>How well are you understanding the content?</h1>
             <input value = {understandScore} onChange={handleChangeTwo}className="input" type="number" />
-            <button onClick = {() => history.push('/step/three')} className="button">Next</button>
+            <button onClick = {() => checkInputTwo()} className="button">Next</button>
     
         
 
