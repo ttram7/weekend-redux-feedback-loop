@@ -6,6 +6,7 @@ import StepOne from '../StepOne/StepOne';
 import StepTwo from '../StepTwo/StepTwo';
 import StepThree from '../StepThree/StepThree';
 import StepFour from '../StepFour/StepFour';
+import ReviewPage from '../ReviewPage/ReviewPage';
 
 function App() {
 
@@ -27,6 +28,9 @@ function App() {
         </Route>
         <Route path="/step/four">
           <StepFour />
+        </Route>
+        <Route path="/step/review">
+          <ReviewPage />
         </Route>
       </Router>
     </div>
