@@ -13,13 +13,9 @@ function StepTwo() {
     return (
         <>
             <h1>How well are you understanding the content?</h1>
-            {/* <p>Feeling?</p> */}
             <input value = {understandScore} onChange={handleChangeTwo}className="input" type="number" />
             <button onClick = {() => history.push('/step/three')} className="button">Next</button>
-            {/* <form>
-                Feeling?
-                <input type ="number"/>
-            </form> */}
+    
         
 
             
