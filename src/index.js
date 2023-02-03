@@ -28,6 +28,13 @@ const supportScore = (state = '', action) => {
     return state;
 }
 
+const comments = (state = '', action) => {
+    if (action.type === 'SET_COMMENTS') {
+        return action.payload;
+    }
+    return state;
+}
+
 const storeInstance = createStore(
     // reducers go here
     combineReducers(
@@ -35,6 +42,7 @@ const storeInstance = createStore(
             feelingScore,
             understandScore,
             supportScore,
+            comments
         }
     ),
     applyMiddleware(logger)

@@ -5,6 +5,7 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import StepOne from '../StepOne/StepOne';
 import StepTwo from '../StepTwo/StepTwo';
 import StepThree from '../StepThree/StepThree';
+import StepFour from '../StepFour/StepFour';
 
 function App() {
 
@@ -23,6 +24,9 @@ function App() {
         </Route>
         <Route path="/step/three">
           <StepThree />
+        </Route>
+        <Route path="/step/four">
+          <StepFour />
         </Route>
       </Router>
     </div>
