@@ -2,7 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
-import StepOne from './StepOne/StepOne';
+import StepOne from '../StepOne/StepOne';
+import StepTwo from '../StepTwo/StepTwo';
 
 function App() {
 
@@ -15,6 +16,9 @@ function App() {
       <Router>
         <Route exact path="/">
           <StepOne />
+        </Route>
+        <Route path="/step/two">
+          <StepTwo />
         </Route>
       </Router>
     </div>

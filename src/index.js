@@ -14,11 +14,19 @@ const feelingScore = (state = '', action) => {
     return state;
 }
 
+const understandScore = (state = '', action) => {
+    if (action.type === 'SET_UNDERSTAND_SCORE') {
+        return action.payload;
+    }
+    return state;
+}
+
 const storeInstance = createStore(
     // reducers go here
     combineReducers(
         {
             feelingScore,
+            understandScore,
         }
     ),
     applyMiddleware(logger)
