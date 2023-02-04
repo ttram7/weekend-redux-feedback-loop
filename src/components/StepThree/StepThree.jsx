@@ -1,28 +1,31 @@
+import {useState} from 'react'; 
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 function StepThree() {
-    const supportScore = useSelector(store => store.supportScore); // getter
+    const [supportInput, setSupportInput] = useState('');
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const handleChangeThree = (event) => {
-        dispatch({ type: 'SET_SUPPORT_SCORE', payload: event.target.value });
-    }
-
-    const checkInputThree = () => {
-        if (supportScore === '') {
-            alert('Please provide input.')
-        }else {
-            history.push('/step/four')
-        }
+    const handleInputThree = (event) => {
+        event.preventDefault();
+        dispatch({ type: 'SET_SUPPORT_SCORE', payload: supportInput });
+        setSupportInput('');
+        history.push('/step/four')
     }
 
     return (
         <>
             <h1>How well are you being supported?</h1>
-            <input value = {supportScore} onChange={handleChangeThree}className="input" type="number" />
-            <button onClick = {() => checkInputThree()} className="button">Next</button>
+            <form onSubmit={handleInputThree} className="add-feedback-form">
+                <input 
+                required 
+                type="number" 
+                value={supportInput}
+                onChange={(event) => setSupportInput(event.target.value)}
+                /> 
+            <button type="submit">Next</button>
+            </form>
     
         
 

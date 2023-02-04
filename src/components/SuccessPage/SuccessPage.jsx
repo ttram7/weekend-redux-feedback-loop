@@ -10,10 +10,6 @@ function SuccessPage () {
     const comments = useSelector(store => store.comments);
 
     const routeToHome = () => {
-        // feelingScore === '';
-        // understandScore === '';
-        // supportScore === '';
-        // comments === '';
         history.push('/')
     }
 

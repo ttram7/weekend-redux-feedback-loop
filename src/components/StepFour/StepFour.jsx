@@ -1,20 +1,30 @@
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 function StepFour() {
-    const comments = useSelector(store => store.comments); // getter
+    const [commentsInput, setCommentsInput] = useState('');
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const handleChangeFour = (event) => {
-        dispatch({ type: 'SET_COMMENTS', payload: event.target.value });
+    const handleInputFour = (event) => {
+        event.preventDefault();
+        dispatch({ type: 'SET_COMMENTS', payload: commentsInput });
+        setCommentsInput('');
+        history.push('/step/review')
     }
 
     return (
         <>
             <h1>Any comments you want to leave?</h1>
-            <input value = {comments} onChange={handleChangeFour}className="input" type="text" />
-            <button onClick = {() => history.push('/step/review')} className="button">Next</button>
+            <form onSubmit={handleInputFour} className="add-feedback-form">
+                <input 
+                type="text" 
+                value={commentsInput}
+                onChange={(event) => setCommentsInput(event.target.value)}
+                /> 
+            <button type="submit">Next</button>
+            </form>
     
         
 
