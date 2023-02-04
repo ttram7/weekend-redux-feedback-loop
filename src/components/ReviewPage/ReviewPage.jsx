@@ -8,12 +8,13 @@ function ReviewPage() {
     const supportScore = useSelector(store => store.supportScore);
     const comments = useSelector(store => store.comments);
 
-    const handleSubmit = () => {
+    const handleSubmit = (event) => {
         // handle post request and history.push(/newpage)
+        const newFeedback = {feelingScore, understandScore, supportScore, comments}
         axios.post('/feedback', newFeedback)
         .then(response => {
             console.log('successful post', response)
-        getFeedback();
+        //getFeedback();
     })
     }
 
