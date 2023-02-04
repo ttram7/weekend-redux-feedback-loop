@@ -12,6 +12,7 @@ const feelingScore = (state = '', action) => {
         return action.payload;
     } 
     return state;
+    //action.payload === '';
 }
 
 const understandScore = (state = '', action) => {

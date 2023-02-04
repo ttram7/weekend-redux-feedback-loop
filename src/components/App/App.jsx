@@ -7,6 +7,7 @@ import StepTwo from '../StepTwo/StepTwo';
 import StepThree from '../StepThree/StepThree';
 import StepFour from '../StepFour/StepFour';
 import ReviewPage from '../ReviewPage/ReviewPage';
+import SuccessPage from '../SuccessPage/SuccessPage';
 
 function App() {
 
@@ -31,6 +32,9 @@ function App() {
         </Route>
         <Route path="/step/review">
           <ReviewPage />
+        </Route>
+        <Route path="/step/success">
+          <SuccessPage />
         </Route>
       </Router>
     </div>

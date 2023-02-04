@@ -17,6 +17,7 @@ function StepOne() {
             alert('Please provide input.')
         }else {
             history.push('/step/two')
+            //feelingScore === '';
         }
     }
     

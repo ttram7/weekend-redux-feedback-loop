@@ -8,6 +8,8 @@ function ReviewPage() {
     const supportScore = useSelector(store => store.supportScore);
     const comments = useSelector(store => store.comments);
 
+    const history = useHistory();
+
     const handleSubmit = (event) => {
         // handle post request and history.push(/newpage)
         const newFeedback = {feelingScore, understandScore, supportScore, comments}
@@ -15,9 +17,11 @@ function ReviewPage() {
         .then(response => {
             console.log('successful post', response)
         //getFeedback();
-    })
-    }
-
+        }).catch(err => {
+            console.log('error', err)
+        })
+        history.push('/step/success')
+}
     return (
         <>
             <h1>Review Your Feedback</h1>
