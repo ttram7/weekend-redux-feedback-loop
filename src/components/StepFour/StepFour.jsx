@@ -10,8 +10,12 @@ function StepFour() {
     const handleInputFour = (event) => {
         event.preventDefault();
         dispatch({ type: 'SET_COMMENTS', payload: commentsInput });
-        setCommentsInput('');
+        //setCommentsInput('');
         history.push('/step/review')
+    }
+
+    const goBack = () => {
+        history.goBack();
     }
 
     return (
@@ -22,7 +26,8 @@ function StepFour() {
                 type="text" 
                 value={commentsInput}
                 onChange={(event) => setCommentsInput(event.target.value)}
-                /> 
+                />
+            <button onClick={() => goBack()}>Prev</button>  
             <button type="submit">Next</button>
             </form>
     

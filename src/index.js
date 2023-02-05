@@ -10,14 +10,17 @@ import registerServiceWorker from './registerServiceWorker';
 const feelingScore = (state = '', action) => {
     if (action.type === 'SET_FEELING_SCORE') {
         return action.payload;
-    } 
+    } else if (action.type === 'CLEAR_ALL') {
+        return '';
+    }
     return state;
-    //action.payload === '';
 }
 
 const understandScore = (state = '', action) => {
     if (action.type === 'SET_UNDERSTAND_SCORE') {
         return action.payload;
+    } else if (action.type === 'CLEAR_ALL') {
+        return '';
     }
     return state;
 }
@@ -25,6 +28,8 @@ const understandScore = (state = '', action) => {
 const supportScore = (state = '', action) => {
     if (action.type === 'SET_SUPPORT_SCORE') {
         return action.payload;
+    } else if (action.type === 'CLEAR_ALL') {
+        return '';
     }
     return state;
 }
@@ -32,6 +37,8 @@ const supportScore = (state = '', action) => {
 const comments = (state = '', action) => {
     if (action.type === 'SET_COMMENTS') {
         return action.payload;
+    } else if (action.type === 'CLEAR_ALL') {
+        return '';
     }
     return state;
 }

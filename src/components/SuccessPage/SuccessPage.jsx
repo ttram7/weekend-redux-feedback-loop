@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 function SuccessPage () {
     const history = useHistory();
+    const dispatch = useDispatch();
 
     const feelingScore = useSelector(store => store.feelingScore);
     const understandScore = useSelector(store => store.understandScore);
@@ -10,6 +11,7 @@ function SuccessPage () {
     const comments = useSelector(store => store.comments);
 
     const routeToHome = () => {
+        dispatch({ type: 'CLEAR_ALL'});
         history.push('/')
     }
 

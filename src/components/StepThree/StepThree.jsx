@@ -10,8 +10,12 @@ function StepThree() {
     const handleInputThree = (event) => {
         event.preventDefault();
         dispatch({ type: 'SET_SUPPORT_SCORE', payload: supportInput });
-        setSupportInput('');
+        //setSupportInput('');
         history.push('/step/four')
+    }
+
+    const goBack = () => {
+        history.goBack();
     }
 
     return (
@@ -23,7 +27,8 @@ function StepThree() {
                 type="number" 
                 value={supportInput}
                 onChange={(event) => setSupportInput(event.target.value)}
-                /> 
+                />
+            <button onClick={() => goBack()}>Prev</button> 
             <button type="submit">Next</button>
             </form>
     
