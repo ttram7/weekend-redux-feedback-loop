@@ -13,18 +13,18 @@ function ReviewPage() {
 
     const history = useHistory();
 
+    // handle post request and route user to success page
     const handleSubmit = (event) => {
-        // handle post request and history.push(/newpage)
         const newFeedback = {feelingScore, understandScore, supportScore, comments}
         axios.post('/feedback', newFeedback)
         .then(response => {
             console.log('successful post', response)
-        //getFeedback();
         }).catch(err => {
             console.log('error', err)
         })
         history.push('/step/success')
 }
+    // display all inputs on this page
     return (
         <>
             <h1>Review Your Feedback</h1>

@@ -9,6 +9,7 @@ import StepFour from '../StepFour/StepFour';
 import ReviewPage from '../ReviewPage/ReviewPage';
 import SuccessPage from '../SuccessPage/SuccessPage';
 
+// all routes defined here
 function App() {
 
   return (

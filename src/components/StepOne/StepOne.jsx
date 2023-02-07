@@ -1,4 +1,3 @@
-import {useState} from 'react'; 
 import {useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
@@ -7,19 +6,20 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import ProgressBar from '../ProgressBar/ProgressBar';
 
+// first page
 function StepOne() {
     const feelingScore = useSelector(store => store.feelingScore); // getter
-    //const [feelingInput, setFeelingInput] = useState('');
     const dispatch = useDispatch();
     const history = useHistory();
 
+    // input will be dispatched to reducer when user enter inputs
     const handleInputOne = event => {
         event.preventDefault();
         dispatch({ type: 'SET_FEELING_SCORE', payload: event.target.value });
-        //setFeelingInput('');
-        //history.push('/step/two')
     }
 
+    // alert will display if user doesn't enter input
+    // if there is input, user will be directed to page two after button click
     const goPageTwo = () => {
         if (feelingScore === '') {
             alert('Please provide input');
@@ -32,20 +32,10 @@ function StepOne() {
         <>
             <ProgressBar progress={25} />
             <h1>How are you feeling today?</h1>
-            {/* <input value = {feelingInput} onChange={handleChangeOne} className="input" type="text" />
-            <button onClick = {() => checkInputOne()} className="button">Next</button>  */}
-            {/* <form onSubmit={handleInputOne}  className="add-feedback-form">
-                <input 
-                required
-                type="number"  
-                value={feelingInput}
-                onChange={(event) => setFeelingInput(event.target.value)}
-                />  */}
-            {/* </form> */}
-                <TextField required id="outlined-required" label="required"
+            <TextField required id="outlined-required" label="required"
                 type="number"  
                 value={feelingScore} onChange={handleInputOne}size="small" variant="outlined" helperText="Enter value as a number" />
-                <Button onClick = {() => goPageTwo()} variant="contained" type="submit">Next</Button>
+            <Button onClick = {() => goPageTwo()} variant="contained" type="submit">Next</Button>
         </>
     )
 }
