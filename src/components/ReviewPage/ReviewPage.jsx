@@ -2,6 +2,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
+import * as React from 'react';
+import Button from '@mui/material/Button';
+
 function ReviewPage() {
     const feelingScore = useSelector(store => store.feelingScore);
     const understandScore = useSelector(store => store.understandScore);
@@ -29,7 +32,7 @@ function ReviewPage() {
             <p>Understanding: {understandScore}</p>
             <p>Support: {supportScore}</p>
             <p>Comments: {comments}</p>
-            <button onClick = {() => handleSubmit()} className="button">Submit</button>
+            <Button onClick = {() => handleSubmit()} variant="contained" type="submit">Submit</Button>
         </>
     )
 }

@@ -26,9 +26,7 @@ function StepOne() {
             history.push('/step/two');
         }
     }
-    // how to go back a page without input fields resetting?
-    // could there be a form set up without an onChange event?
-    // how to pass prop into button onClick function?
+    
     return (
         <>
             <h1>How are you feeling today?</h1>
@@ -41,11 +39,11 @@ function StepOne() {
                 value={feelingInput}
                 onChange={(event) => setFeelingInput(event.target.value)}
                 />  */}
+            {/* </form> */}
                 <TextField required id="outlined-required" label="required"
                 type="number"  
-                value={feelingScore} onChange={handleInputOne}size="small" variant="outlined" helperText="Enter value as a numnber" />
+                value={feelingScore} onChange={handleInputOne}size="small" variant="outlined" helperText="Enter value as a number" />
                 <Button onClick = {() => goPageTwo()} variant="contained" type="submit">Next</Button>
-            {/* </form> */}
         </>
     )
 }

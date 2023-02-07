@@ -2,16 +2,29 @@ import {useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+
 function StepThree() {
-    const [supportInput, setSupportInput] = useState('');
+    //const [supportInput, setSupportInput] = useState('');
+    const supportScore = useSelector(store => store.supportScore); // getter
     const dispatch = useDispatch();
     const history = useHistory();
 
     const handleInputThree = (event) => {
         event.preventDefault();
-        dispatch({ type: 'SET_SUPPORT_SCORE', payload: supportInput });
+        dispatch({ type: 'SET_SUPPORT_SCORE', payload: event.target.value });
         //setSupportInput('');
-        history.push('/step/four')
+        
+    }
+
+    const goPageFour = () => {
+        if (supportScore === '') {
+            alert('Please provide input');
+        } else {
+            history.push('/step/four');
+        }
     }
 
     const goBack = () => {
@@ -21,7 +34,7 @@ function StepThree() {
     return (
         <>
             <h1>How well are you being supported?</h1>
-            <form onSubmit={handleInputThree} className="add-feedback-form">
+            {/* <form onSubmit={handleInputThree} className="add-feedback-form">
                 <input 
                 required 
                 type="number" 
@@ -30,7 +43,12 @@ function StepThree() {
                 />
             <button onClick={() => goBack()}>Prev</button> 
             <button type="submit">Next</button>
-            </form>
+            </form> */}
+            <TextField required id="outlined-required" label="required"
+                type="number"  
+                value={supportScore} onChange={handleInputThree}size="small" variant="outlined" helperText="Enter value as a number" />
+                <Button onClick = {() => goBack()} variant="contained" type="submit">Prev</Button>
+                <Button onClick = {() => goPageFour()} variant="contained" type="submit">Next</Button>
     
         
 

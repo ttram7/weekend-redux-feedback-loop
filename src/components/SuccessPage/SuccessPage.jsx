@@ -1,6 +1,9 @@
 import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
+import * as React from 'react';
+import Button from '@mui/material/Button';
+
 function SuccessPage () {
     const history = useHistory();
     const dispatch = useDispatch();
@@ -18,7 +21,8 @@ function SuccessPage () {
     return (
         <>
             <h1>Thank you! Your feedback has been submitted.</h1>
-            <button onClick={() => routeToHome()}>Leave New Feedback</button>
+            <Button onClick = {() => routeToHome()} variant="contained" type="submit">Leave New Feedback</Button>
+            
         </>
     )
 }

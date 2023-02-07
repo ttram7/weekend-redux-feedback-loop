@@ -49,7 +49,7 @@ function StepTwo() {
             </form> */}
             <TextField required id="outlined-required" label="required"
                 type="number"  
-                value={understandScore} onChange={handleInputTwo}size="small" variant="outlined" helperText="Enter value as a numnber" />
+                value={understandScore} onChange={handleInputTwo}size="small" variant="outlined" helperText="Enter value as a number" />
                 <Button onClick = {() => goBack()} variant="contained" type="submit">Prev</Button>
                 <Button onClick = {() => goPageThree()} variant="contained" type="submit">Next</Button>
             {/* <UserForm input = {understandScore} handleInput = {handleInputTwo} nextPage = {goPageThree()} /> */}
