@@ -4,9 +4,11 @@ import { useHistory } from 'react-router-dom';
 
 import UserForm from '../UserForm/UserForm';
 
+
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import ProgressBar from '../ProgressBar/ProgressBar';
 
 function StepTwo() {
     //const [understandInput, setUnderstandInput] = useState('');
@@ -36,6 +38,7 @@ function StepTwo() {
 
     return (
         <>
+            <ProgressBar progress={50} />
             <h1>How well are you understanding the content?</h1>
             {/* <form onSubmit={handleInputTwo} className="add-feedback-form">
                 <input 

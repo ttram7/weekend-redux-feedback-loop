@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import ProgressBar from '../ProgressBar/ProgressBar';
 
 function StepThree() {
     //const [supportInput, setSupportInput] = useState('');
@@ -33,6 +34,7 @@ function StepThree() {
 
     return (
         <>
+            <ProgressBar progress={75} />
             <h1>How well are you being supported?</h1>
             {/* <form onSubmit={handleInputThree} className="add-feedback-form">
                 <input 

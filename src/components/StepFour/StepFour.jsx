@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import ProgressBar from '../ProgressBar/ProgressBar';
 
 function StepFour() {
     //const [commentsInput, setCommentsInput] = useState('');
@@ -28,6 +29,7 @@ function StepFour() {
 
     return (
         <>
+            <ProgressBar progress={100} />
             <h1>Any comments you want to leave?</h1>
             {/* <form onSubmit={handleInputFour} className="add-feedback-form">
                 <input 

@@ -5,6 +5,7 @@ import { useHistory } from 'react-router-dom';
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import ProgressBar from '../ProgressBar/ProgressBar';
 
 function StepOne() {
     const feelingScore = useSelector(store => store.feelingScore); // getter
@@ -29,6 +30,7 @@ function StepOne() {
     
     return (
         <>
+            <ProgressBar progress={25} />
             <h1>How are you feeling today?</h1>
             {/* <input value = {feelingInput} onChange={handleChangeOne} className="input" type="text" />
             <button onClick = {() => checkInputOne()} className="button">Next</button>  */}
