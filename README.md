@@ -37,5 +37,5 @@ Express
 ## Acknowledgement
 Thanks to [Prime Digital Academy](www.primeacademy.io) who gave me the knowledge and support to make this application possible.
 
-## Support
-If you have suggestions or issues, please email me at [tinatram07@gmail.com]
+
+
